@@ -3,10 +3,13 @@ compatibility_date = "2024-09-11"
 # compatibility_flags = [ "nodejs_compat" ]
 
 
-# [vars]
-DATABASE_URL="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiZWNhNmYzODItYzJjMS00ZTI3LTlkNDgtOThhNWFmNjQ0NjMxIiwidGVuYW50X2lkIjoiOWExZmY4ZjUzMTUxZWM3YjQ2MGU3MTkyYzcwODU0ZGU2NDZjNmZmZTc3NTI0MmZlZDlhNmJjNWE1YTQ3NTBmMCIsImludGVybmFsX3NlY3JldCI6ImEwMDA3M2Q3LWI0YTQtNDk2NS1iZWUwLWE4OTYwZTEwMmNiMiJ9.Urq4dNDIXtoTxyLJHA2yG6Qzx6gwMUTP9j2oCwugJgY"
-# MY_VAR = "my-variable"
+[vars]
+
+DATABASE_URL="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiYzUxZjJhMzItYmM5MC00ODk5LWJiYzktY2JkYWVkMTcwMDc1IiwidGVuYW50X2lkIjoiYTIyM2U2N2JiMWQxOGI5N2EzNmJiMjAxOTE5NjE4YjgzZjFhN2NkZDNkYjQ0NDA1MWFjZjc0ZDkxNTJmNzJlMSIsImludGVybmFsX3NlY3JldCI6ImQxMGIxYTdhLWY1ZjAtNGM5Ni04NzhhLTczMjhlNDU2NWQ0MSJ9.ZS55x946LwT3XL9yAsB6M-Daz4RIfXqyWNqAlKpHhFs"
+
 JWT_SECRET = "harshit01"
+
+# MY_VAR = "my-variable"
 # [[kv_namespaces]]
 # binding = "MY_KV_NAMESPACE"
 # id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
