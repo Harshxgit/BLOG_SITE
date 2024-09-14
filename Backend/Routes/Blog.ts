@@ -40,7 +40,8 @@ blogRouter.use("/*", async (c, next) => {
 });
 
 //create blog post
-blogRouter.post("/", async (c, next) => {
+blogRouter.post("/post", async (c) => {
+  console.log("reach here")
   const userId = c.get("userId");
   const prisma = new PrismaClient({
     datasourceUrl: c.env.DATABASE_URL,
@@ -65,7 +66,7 @@ blogRouter.post("/", async (c, next) => {
 });
 
 //update blog
-blogRouter.put("/", async (c, next) => {
+blogRouter.put("/update", async (c, next) => {
   const userId = c.get("userId");
   const prisma = new PrismaClient({
     datasourceUrl: c.env.DATABASE_URL,
@@ -75,6 +76,7 @@ blogRouter.put("/", async (c, next) => {
   const blog = await prisma.blog.update({
     where: {
       id: body.id,
+      authorId :Number(userId)
     },
     data: {
       title: body.title,
@@ -85,7 +87,7 @@ blogRouter.put("/", async (c, next) => {
 });
 
 //get blogposts
-blogRouter.get("/id", async (c) => {
+blogRouter.get("/bulk/id", async (c) => {
   const id = Number(c.req.param("id"));
   const prisma = new PrismaClient({
     datasourceUrl: c.env.DATABASE_URL,
@@ -102,7 +104,7 @@ blogRouter.get("/id", async (c) => {
 });
 
 //get the blog in bulk
-blogRouter.get("/", async (c) => {
+blogRouter.get("/bulk", async (c) => {
   const prisma = new PrismaClient({
     datasourceUrl: c.env.DATABASE_URL,
   }).$extends(withAccelerate());

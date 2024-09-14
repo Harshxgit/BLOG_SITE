@@ -41,7 +41,7 @@ userRouter.post("/signup", async (c) => {
   }
 });
 
-userRouter.get("/signin", async (c) => {
+userRouter.post("/signin", async (c) => {
   const body = await c.req.json();
 
   const prisma = new PrismaClient({
@@ -61,5 +61,5 @@ userRouter.get("/signin", async (c) => {
   }
   // @ts-ignore //this is not the right way
   const jwt = await sign({id :user.id},c.env.JWT_SECRET)
-   c.json(jwt)
+  return c.json(jwt)
 });
