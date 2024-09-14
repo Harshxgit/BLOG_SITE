@@ -47,6 +47,7 @@ userRouter.get("/signin", async (c) => {
   const prisma = new PrismaClient({
     datasourceUrl: c.env.DATABASE_URL,
   }).$extends(withAccelerate());
+  
   const user = await prisma.user.findUnique({
     where: {
       username: body.username,
